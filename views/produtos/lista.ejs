@@ -1,0 +1,28 @@
+<% include ../includes/header.ejs %>
+<h1 class="basic-title"><strike>Testando ejs 2017</strike></h1>
+<h1 class="basic-title">Listando livros</h1>
+<div class="container min-container">
+    <% if (salvo.length) { %>
+        <p class="alert alert-success">Livro salvo com sucesso!</p>
+    <% } %>
+    <table class="table table-condensed table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <td>Título</td>
+                <td>Preço</td>
+                <td>Descrição</td>
+            </tr>
+        </thead>
+        <tbody>
+        <% for (var i = 0; i < livros.length; i++) { %>
+            <tr>
+                <td><%=livros[i].titulo %></td>
+                <td><%=livros[i].preco %></td>
+                <td><%=livros[i].descricao %></td>
+            </tr>
+        <% } %>
+        </tbody>
+    </table>
+    <a class="btn btn-success" href="/produtos/form"><span class="glyphicon glyphicon-plus-sign"></span> Novo livro</a>
+</div>
+<% include ../includes/footer.ejs %>

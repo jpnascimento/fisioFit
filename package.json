@@ -1,18 +1,26 @@
 {
-  "name": "FisioFit",
-  "version": "0.1.0",
-  "description": "FisioFit vendas",
+  "name": "casadocodigo",
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "author": "Jefferson Nascimento",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.17.1",
-    "ejs": "^2.5.6",
-    "express": "^4.15.2",
+    "body-parser": "^1.14.0",
+    "ejs": "~2.3.3",
+    "express": "^4.13.4",
     "express-load": "^1.1.15",
-    "jsonwebtoken": "^7.3.0",
-    "mongoose": "^4.9.1",
-    "morgan": "^1.8.1",
-    "postgresql": "0.0.1"
+    "express-validator": "^2.17.1",
+    "mocha": "^2.3.3",
+    "mysql": "^2.9.0",
+    "socket.io": "^1.7.2"
+  },
+  "devDependencies": {
+    "database-cleaner": "^1.2.0",
+    "mocha": "^2.3.3",
+    "supertest": "^1.1.0"
   }
 }

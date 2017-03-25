@@ -1,0 +1,41 @@
+<% include ../includes/header.ejs %>
+
+<h1 class="basic-title">Cadastrar livros</h1>
+<div class="container min-container">
+
+    <% if (locals.validationError) { %>
+        <div class="alert alert-danger">
+            <h4>Erros encontrados:</h4>
+            <ul class="list-unstyled" >
+            <% validationError.forEach(function(erro) { %>
+                <li class=""><scan class="glyphicon glyphicon-exclamation-sign"></scan> <%=erro.msg %></li>
+            <% }); %>
+            </ul>
+        </div>
+    <% } %>
+    
+    <form action="/produtos" method="post" class="well" id="formProduto">
+        <div class="form-group row">
+            <label for="inputTitulo" class="col-sm-2 col-form-label">Título</label>
+            <div class="col-sm-10">
+                <input type="text" name="titulo" class="form-control" id="inputTitulo" placeholder="Título do livro"  /> 
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPreco" class="col-sm-2 col-form-label">Preço</label>
+            <div class="col-sm-10">
+                <input type="text" name="preco" class="form-control" id="inputPreco" placeholder="Preço do livro" /> 
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputDescricao" class="col-sm-2 col-form-label">Descriçao</label>
+            <div class="col-sm-10">
+                <input type="text" name="descricao" class="form-control" id="inputDescricao" placeholder="Descrição do livro"  /> 
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" form="formProduto" >Gravar</button>
+    </form>
+    
+</div>
+
+<% include ../includes/footer.ejs %>
