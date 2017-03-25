@@ -1,10 +1,10 @@
 var mysql = require('mysql');
 
-var databaseName = 'fisiofit_sell_test';
+var databaseName = 'fisiofit_test';
 
 // Configuração para teste
 if (process.env.NODE_ENV == 'prod') {
-    databaseName = 'fisiofit_sell';
+    databaseName = 'fisiofit';
 }
 
 var pool = mysql.createPool({
