@@ -1,0 +1,18 @@
+{
+  "name": "FisioFit",
+  "version": "0.1.0",
+  "description": "FisioFit vendas",
+  "main": "index.js",
+  "author": "Jefferson Nascimento",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "express-load": "^1.1.15",
+    "jsonwebtoken": "^7.3.0",
+    "mongoose": "^4.9.1",
+    "morgan": "^1.8.1",
+    "postgresql": "0.0.1"
+  }
+}
