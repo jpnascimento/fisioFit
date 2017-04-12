@@ -7,19 +7,19 @@ var flash = require("connect-flash");
 var expressValidator = require("express-validator");
 
 module.exports = function() {
-    
+
     var app = express();
     app.set('view engine', 'ejs');
-    
+
     app.use(express.static('./public'));
     app.use(bodyParser.urlencoded());
     app.use(bodyParser.json());
-    
+
     app.use(expressValidator());
     app.use(session({ secret: 'xyz' }));
     app.use(cookieParser());
     app.use(flash());
-    
+
     // ---- Substituido
     // require('./routes/produtos')(app);
     // Carrega todos os arquivos .js sob o diretório indicado
@@ -28,7 +28,7 @@ module.exports = function() {
         .then('infra')
     // Joga no 'app'
         .into(app);
-    
+
     // --- Rotas para os erros
     app.use(function(req, res, next) {
         // Erro 404
@@ -36,6 +36,6 @@ module.exports = function() {
         // Erro 500
         res.status(500).render('erros/500');
     });
-    
+
     return app;
-} 
+}

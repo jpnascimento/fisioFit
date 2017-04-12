@@ -6,6 +6,7 @@ create table item (
 	descricao text,
 	data_cadastro timestamp default now(),
 	imagem varchar(255),
+	ativo boolean default true,
 	primary key(id)
 );
 
@@ -41,6 +42,7 @@ create table forma_pagamento (
 	quantidade_parcelas int,
 	desconto float default 0.0,
 	juros float default 0.0,
+	ativo boolean default true,
 	descricao text,
 	primary key(id)
 );

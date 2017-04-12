@@ -1,28 +1,38 @@
 <% include ../includes/header.ejs %>
-<h1 class="basic-title"><strike>Testando ejs 2017</strike></h1>
-<h1 class="basic-title">Listando livros</h1>
 <div class="container min-container">
     <% if (salvo.length) { %>
         <p class="alert alert-success">Livro salvo com sucesso!</p>
     <% } %>
-    <table class="table table-condensed table-bordered table-striped table-hover">
+    <h3 class="h3">Itens encontrados</h3>
+    <table class="table table-condensed table-striped table-hover">
         <thead>
             <tr>
-                <td>Título</td>
-                <td>Preço</td>
+                <td>Nome</td>
+                <td>Código</td>
                 <td>Descrição</td>
+                <td>Preço</td>
+                <td>Data do cadastro</td>
+                <td>Operações</td>
             </tr>
         </thead>
         <tbody>
-        <% for (var i = 0; i < livros.length; i++) { %>
+        <% for (var i = 0; i < item.length; i++) { %>
             <tr>
-                <td><%=livros[i].titulo %></td>
-                <td><%=livros[i].preco %></td>
-                <td><%=livros[i].descricao %></td>
+                <td><%=item[i].nome %></td>
+                <td><%=item[i].codigo %></td>
+                <td><%=item[i].descricao %></td>
+                <td><%=item[i].preco %></td>
+                <td><%=item[i].data_cadastro %></td>
+                <td>
+                  <div class="btn-group btn-group-sm">
+                    <a class="btn btn-info" href="item/<%=item[i].id %>"><span class="fa fa-eye"></span></a>
+                    <a class="btn btn-danger" href="item/invalida/<%=item[i].id %>"><span class="fa fa-eye"></span></a>
+                  </div>
+                </td>
             </tr>
         <% } %>
         </tbody>
     </table>
-    <a class="btn btn-success" href="/produtos/form"><span class="glyphicon glyphicon-plus-sign"></span> Novo livro</a>
+    <a class="btn btn-success" href="/item/form"><span class="glyphicon glyphicon-plus-sign"></span> Novo item</a>
 </div>
 <% include ../includes/footer.ejs %>
